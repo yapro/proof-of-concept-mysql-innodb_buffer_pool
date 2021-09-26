@@ -21,6 +21,12 @@ InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
 InnoDB: Buffer pool(s) dump completed at 210331 14:52:07
 ```
 
+Оценивать скорость будем запросом:
+```sql
+SELECT COUNT(*), MAX(n) FROM test_table;
+```
+*данный запрос будем выполнять до и после увеличения innodb_buffer_pool_size.
+
 Создаю базу, таблицу и данные:
 ```sql
 create database test_db;
